@@ -26,3 +26,4 @@ jobs:
           pylint $files
         else
           echo "No Python files to lint"
+        fi
