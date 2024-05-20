@@ -1,4 +1,4 @@
-"""Module providingFunction printing python version."""
+"""Connect to Reddit API and Fetch comments"""
 
 import json
 import praw
