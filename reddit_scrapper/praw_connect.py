@@ -6,7 +6,13 @@ from kafka import KafkaProducer
 from colorama import Fore, Style, init
 
 # Setup Reddit connection using PRAW with credentials from praw.ini
-reddit = praw.Reddit(site_name="DEFAULT")  # The section name in praw.ini
+reddit = praw.Reddit(
+    client_id="gsFR2LXtcSJ5GuuqyB6XnQ",
+    client_secret="taoG3-I6EP1UobHP2s6EVOeOPyDvUQ",
+    user_agent="script:is-this-sub-toxic:v1.0 (by /u/Slow_Low206)",
+    username="Slow_Low206",
+    password="Ayelme1002@"
+)
 
 # Choose the subreddit
 subreddit = reddit.subreddit("EASportsFC")
