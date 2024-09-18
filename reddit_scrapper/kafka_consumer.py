@@ -1,8 +1,16 @@
-from kafka import KafkaConsumer
-import json
-from setup_database import create_connection, insert_comment
+"""Create a Kafka consumer that stores Reddit comments in a database."""
+
+import json  # Standard library import
+from kafka import KafkaConsumer  # Third-party import
+from setup_database import create_connection, insert_comment  # Local imports
 
 def consume_messages():
+    """
+    Consume messages from a Kafka topic and store them in a database.
+
+    The consumer listens to the 'reddit_comments' topic, deserializes the
+    messages, and inserts the comment data into the database.
+    """
     consumer = KafkaConsumer(
         'reddit_comments',
         bootstrap_servers=['localhost:9092'],
