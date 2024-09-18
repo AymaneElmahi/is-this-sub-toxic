@@ -30,7 +30,12 @@ COMMENT_LIMIT = 10  # Set the number of comments you want to fetch
 for comment in subreddit.stream.comments(pause_after=-1):
     if comment is None:
         break
-    message = {"id": comment.id, "body": comment.body}
+    message = {
+        "id": comment.id,
+        "body": comment.body,
+        "created_utc": comment.created_utc,
+        "score": comment.score
+    }
     producer.send("reddit_comments", value=message)
     producer.flush()
     print(
