@@ -1,0 +1,4 @@
+praw
+kafka-python
+colorama
+pylint
