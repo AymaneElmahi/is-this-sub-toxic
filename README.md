@@ -1,4 +1,4 @@
-# Subreddit Toxicity Analyzer
+# 🔍 Subreddit Toxicity Analyzer
 
 A real-time toxicity analysis tool that monitors Reddit comments and provides visualization of toxicity trends in subreddits. The system uses machine learning to analyze comment sentiment and displays the results through an interactive web interface.
 
@@ -12,7 +12,7 @@ This tool helps monitor and analyze the toxicity levels in Reddit communities by
 - Visualizing toxicity trends over time
 - Storing results for historical analysis
 
-## Architecture
+## 🏗️ Architecture
 
 The project consists of several components:
 - Reddit Scraper: Collects comments using PRAW
@@ -21,13 +21,13 @@ The project consists of several components:
 - Flask Backend: Serves the API and web interface
 - SQLite Database: Stores comments and analysis results
 
-## Prerequisites
+## ✨ Prerequisites
 
 - Python 3.8+
 - Docker and Docker Compose
 - Reddit API credentials ([How to obtain](https://www.reddit.com/prefs/apps))
 
-## Installation
+## 🚀 Installation
 
 1. Clone the repository:
 ```bash
@@ -46,7 +46,7 @@ source myenv/bin/activate  # On Windows: myenv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Configuration
+## ⚙️ Configuration
 
 1. Set up environment variables by creating a `.env` file:
 ```bash
@@ -69,7 +69,7 @@ docker-compose up -d
 python reddit_scrapper/setup_database.py
 ```
 
-## Database Schema
+## 💾 Database Schema
 
 The SQLite database (`reddit_comments.db`) contains a single table with the following schema:
 
@@ -83,7 +83,7 @@ CREATE TABLE comments (
 )
 ```
 
-## Usage
+## 🎮 Usage
 
 ### Option 1: Running All Components (Production)
 ```bash
@@ -111,7 +111,7 @@ docker-compose down       # Stop all services
 
 Access the web interface at `http://localhost:5000`
 
-## Project Structure
+## 📁 Project Structure
 ```
 is-this-sub-toxic/
 ├── process_comments/      # ML analysis components
@@ -123,7 +123,7 @@ is-this-sub-toxic/
 └── README.md
 ```
 
-## Components
+## 🔧 Components
 
 ### Reddit Scraper
 - Fetches comments using PRAW
@@ -146,7 +146,7 @@ is-this-sub-toxic/
 - Interactive Chart.js graphs
 - Responsive Tailwind CSS design
 
-## Monitoring
+## 📊 Monitoring
 
 View real-time logs:
 ```bash
@@ -157,7 +157,7 @@ docker logs -f kafka_consumer
 docker logs -f web_app
 ```
 
-## Troubleshooting
+## 🔍 Troubleshooting
 
 1. If Kafka connection fails:
 ```bash
@@ -171,7 +171,7 @@ rm reddit_comments.db
 python reddit_scrapper/setup_database.py
 ```
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -179,13 +179,13 @@ python reddit_scrapper/setup_database.py
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## License
+## 📝 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Security Notes
+## ⚠️ Security Notes
 
-⚠️ Important security considerations:
+Important security considerations:
 - Never commit `.env` file or credentials
 - Regenerate Reddit API credentials if exposed
 - Use secrets management in production
