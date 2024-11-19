@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subreddit Toxicity Analyzer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4">Subreddit Toxicity Analysis</h1>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <canvas id="toxicityChart"></canvas>
+        </div>
+    </div>
+    <script>
+        fetch('/api/toxicity-data')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('toxicityChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.map(d => d.created_utc),
+                        datasets: [{
+                            label: 'Average Toxicity Score',
+                            data: data.map(d => d.toxicity_score),
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 1
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+praw
+kafka-python
+colorama
+pylint
+nltk
+pandas
+transformers
+torch
+flask
