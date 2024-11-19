@@ -1,4 +1,5 @@
 myenv
 *.pyc
+.env
 # secrets/
 # praw.ini
