@@ -6,3 +6,4 @@ nltk
 pandas
 transformers
 torch
+flask
