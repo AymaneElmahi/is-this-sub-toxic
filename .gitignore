@@ -2,4 +2,4 @@ myenv
 *.pyc
 .env
 # secrets/
-# praw.ini
+praw.ini
